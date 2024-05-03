@@ -1,6 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-// import { nanoid } from "nanoid";
 import { useId } from "react";
 import clsx from "clsx";
 import { useDispatch } from "react-redux";
@@ -11,11 +10,8 @@ export default function ContactForm() {
   const textId = useId();
   const telId = useId();
   const dispatch = useDispatch();
-  // const userId = nanoid(5);
 
   const handleSubmite = (value, actions) => {
-    console.log("🚀 ~ handleSubmite ~ value:", value);
-
     dispatch(addContact(value.name, value.number));
     actions.resetForm();
   };
